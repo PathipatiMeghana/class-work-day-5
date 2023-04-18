@@ -1,0 +1,28 @@
+
+#include <stdio.h>
+
+int findLargest(int arr[], int n) {
+    static int i = 0, max = -1;
+    if (i < n) {
+        if (arr[i] > max) {
+            max = arr[i];
+        }
+        i++;
+        findLargest(arr, n);
+    }
+    return max;
+}
+
+int main() {
+    int n, arr[100], i, max;
+    printf("Input the number of elements to be stored in the array: ");
+    scanf("%d", &n);
+    printf("Input %d elements in the array:\n", n);
+    for (i = 0; i < n; i++) {
+        printf("element - %d : ", i);
+        scanf("%d", &arr[i]);
+    }
+    max = findLargest(arr, n);
+    printf("Largest element of an array is: %d", max);
+    return 0;
+}
