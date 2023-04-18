@@ -1,0 +1,71 @@
+include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+   int i, n;
+   float *arr, largest;
+
+   printf("Enter the total number of elements (1 to 100): ");
+   scanf("%d", &n);
+
+   // Allocate memory dynamically
+   arr = (float*) malloc(n * sizeof(float));
+
+   // Read elements from user input and store in the dynamically allocated array
+   for(i = 0; i < n; i++) {
+      printf("Number %d: ", i+1);
+      scanf("%f", &arr[i]);
+   }
+
+   // Initialize largest to the first element of the array
+   largest = arr[0];
+
+   // Find the largest element in the array
+   for(i = 1; i < n; i++) {
+      if(largest < arr[i])
+         largest = arr[i];
+   }
+
+   printf("The largest element is: %.2f", largest);
+
+   // Free dynamically allocated memory
+   free(arr);
+
+   return 0;
+}
+In this program, we first read the total number of elements from the user input and allocate memory dynamically using the malloc() function. We then read the elements from
+include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+   int i, n;
+   float *arr, largest;
+
+   printf("Enter the total number of elements (1 to 100): ");
+   scanf("%d", &n);
+
+   // Allocate memory dynamically
+   arr = (float*) malloc(n * sizeof(float));
+
+   // Read elements from user input and store in the dynamically allocated array
+   for(i = 0; i < n; i++) {
+      printf("Number %d: ", i+1);
+      scanf("%f", &arr[i]);
+   }
+
+   // Initialize largest to the first element of the array
+   largest = arr[0];
+
+   // Find the largest element in the array
+   for(i = 1; i < n; i++) {
+      if(largest < arr[i])
+         largest = arr[i];
+   }
+
+   printf("The largest element is: %.2f", largest);
+
+   // Free dynamically allocated memory
+   free(arr);
+
+   return 0;
+}
